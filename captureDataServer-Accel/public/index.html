@@ -32,6 +32,7 @@ function start()
     function updateData() {
       loadURL("./getData", function(data){
         var imuData = JSON.parse(data);
+        console.log (imuData);
 
         var x = imuData.x.toFixed(2); // Assuming 2 decimal places for x
         var y = imuData.y.toFixed(2); // Assuming 2 decimal places for y
