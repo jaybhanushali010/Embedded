@@ -37,7 +37,7 @@ app.get("/getData", function (req, res) {
     ret.x = accX; 
     ret.y = accY; 
     ret.z = accZ; 
-    // ret.pos = pos;
+    ret.pos = pos;
     
     res.send(JSON.stringify(ret));
 });
