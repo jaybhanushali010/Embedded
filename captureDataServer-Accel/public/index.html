@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html>
 <head>
 <script src='asyncReq.js'></script>
@@ -19,4 +19,38 @@ function start()
 <h1> Accel Data </h1>
 <div id='results'> </div>
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMU Data</title>
+  <script src='asyncReq.js'></script>
+  <script>
+    function updateData() {
+      loadURL("./getData", function(data){
+        var imuData = JSON.parse(data);
+
+        var x = imuData.x.toFixed(2); // Assuming 2 decimal places for x
+        var y = imuData.y.toFixed(2); // Assuming 2 decimal places for y
+        var z = imuData.z.toFixed(2); // Assuming 2 decimal places for z
+        var pos = imuData.posture;
+
+        var resultString = "x: " + x + ", y: " + y + ", z: " + z + ", posture: " + pos;
+        document.getElementById("results").innerHTML = resultString;
+      });
+    }
+
+    function start() {
+      setInterval(updateData, 300);
+    }
+  </script>
+</head>
+<body onload='start()'>
+  <h1>IMU Data</h1>
+  <div id='results'></div>
+</body>
 </html>
+
