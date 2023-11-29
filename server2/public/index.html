@@ -51,10 +51,10 @@ function start()
   <script src='asyncReq.js'></script>
   <script>
     function updateData() {
-      loadURL("./getData", function(data) {
+      loadURL("/getData", function(data) {
         var jsonData = JSON.parse(data);
         document.getElementById("results").innerHTML =
-          "x: " + jsonData.x + "<br>yy: " + jsonData.y + "<br>z: " + jsonData.z + "<br>pos: " + jsonData.posture;
+          "x: " + jsonData.x + "<br>yy: " + jsonData.y + "<br>z: " + jsonData.z + "<br>pos: " + jsonData.pos;
       });
     }
 
