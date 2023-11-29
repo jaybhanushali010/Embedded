@@ -22,6 +22,9 @@ app.get("/sendData", function (req, res) {
     pos = req.query.pos || ""
     req.query.time = new Date().getTime();
     console.log(req.query);
+
+    console.log("Received data:", req.query);
+    console.log("accX:", accX, "accY:", accY, "accZ:", accZ, "pos:", pos);
     
 
    db.collection("data").insertOne(req.query, function(result, err){
