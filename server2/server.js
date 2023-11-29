@@ -36,7 +36,7 @@ app.get("/getData", function (req, res) {
       x: accX,
       y: accY,
       z: accZ,
-      pos: posture // Include the posture information
+      pos: pos // Include the posture information
     };
   
     res.json(ret); // Send the response as JSON
