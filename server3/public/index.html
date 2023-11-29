@@ -54,8 +54,7 @@ function start()
       loadURL("/getData", function(data) {
         var jsonData = JSON.parse(data);
         document.getElementById("results").innerHTML =
-          "x_acc: " + jsonData.x1 + "<br>y_acc: " + jsonData.y1 + "<br>z_acc: " + jsonData.z1 + 
-          "x_gyro: " + jsonData.x2 + "<br>y_gyro: " + jsonData.y2 + "<br>z_gyro: " + jsonData.z2 + "<br>activity: " + jsonData.Activity;
+          "x: " + jsonData.x + "<br>yy: " + jsonData.y + "<br>z: " + jsonData.z + "<br>pos: " + jsonData.posture;
       });
     }
 
