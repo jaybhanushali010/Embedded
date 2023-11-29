@@ -16,19 +16,19 @@ app.get("/", function (req, res) {
 });
 
 app.get("/sendData", function (req, res) {
+    console.log(req.query);
     accX = req.query.x
     accY = req.query.y
     accZ = req.query.z
     pos = req.query.pos || "p"
     req.query.time = new Date().getTime();
-    console.log(req.query);
 
     console.log("Received data:", req.query);
     console.log("accX:", accX, "accY:", accY, "accZ:", accZ, "pos:", pos);
     
 
    db.collection("data").insertOne(req.query, function(result, err){
-       console.log(result, err);
+       //console.log(result, err);
     res.send("1");
    });
 });
