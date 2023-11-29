@@ -54,8 +54,8 @@ function start()
       loadURL("/getData", function(data) {
         var jsonData = JSON.parse(data);
         document.getElementById("results").innerHTML =
-          "x_acc: " + jsonData.x1 + "<br>y_acc: " + jsonData.y1 + "<br>z_acc: " + jsonData.z1 + 
-          "<br>x_gyro: " + jsonData.x2 + "<br>y_gyro: " + jsonData.y2 + "<br>z_gyro: " + jsonData.z2 + "<br>activity: " + jsonData.activity;
+          "x_acc: " + jsonData.x_acc + "<br>y_acc: " + jsonData.y_acc + "<br>z_acc: " + jsonData.z_cc + 
+          "<br>x_gyro: " + jsonData.x_gyro + "<br>y_gyro: " + jsonData.y_gyro + "<br>z_gyro: " + jsonData.z_gyro + "<br>Activity: " + jsonData.activity;
       });
     }
 
