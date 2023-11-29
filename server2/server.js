@@ -19,7 +19,7 @@ app.get("/sendData", function (req, res) {
     accX = req.query.x
     accY = req.query.y
     accZ = req.query.z
-    pos = req.query.pos || ""
+    pos = req.query.pos || "p"
     req.query.time = new Date().getTime();
     console.log(req.query);
 
