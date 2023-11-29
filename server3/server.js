@@ -17,12 +17,12 @@ app.get("/", function (req, res) {
 
 app.get("/sendData", function (req, res) {
     console.log(req.query);
-    accX = req.query.x1
-    accY = req.query.y1
-    accZ = req.query.z1
-    gyroX = req.query.x2
-    gyroY = req.query.y2
-    gyroZ = req.query.z2
+    accX = req.query.x_acc
+    accY = req.query.y_acc
+    accZ = req.query.z_acc
+    gyroX = req.query.x_gyro
+    gyroY = req.query.y_gyro
+    gyroZ = req.query.z_gyro
 
     activity = req.query.Activity //|| "p"
     req.query.time = new Date().getTime();
@@ -40,12 +40,12 @@ app.get("/sendData", function (req, res) {
 
 app.get("/getData", function (req, res) {
     var ret = {
-      x1: accX,
-      y1: accY,
-      z1: accZ,
-      x2: gyroX,
-      y2: gyroY,
-      z2: gyroZ,
+      x_acc: accX,
+      y_acc: accY,
+      z_acc: accZ,
+      x_gyro: gyroX,
+      y_gyro: gyroY,
+      z_gyro: gyroZ,
       Activity: activity // Include the posture information
     };
   
