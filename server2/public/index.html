@@ -55,7 +55,7 @@ function start()
         var jsonData = JSON.parse(data);
         document.getElementById("results").innerHTML =
           "x_acc: " + jsonData.x1 + "<br>y_acc: " + jsonData.y1 + "<br>z_acc: " + jsonData.z1 + 
-          "x_gyro: " + jsonData.x2 + "<br>y_gyro: " + jsonData.y2 + "<br>z_gyro: " + jsonData.z2 + "<br>activity: " + jsonData.Activity;
+          "x_gyro: " + jsonData.x2 + "<br>y_gyro: " + jsonData.y2 + "<br>z_gyro: " + jsonData.z2 + "<br>Activity: " + jsonData.activity;
       });
     }
 
@@ -65,7 +65,7 @@ function start()
   </script>
 </head>
 <body onload='start()'>
-  <h1> IMU Data </h1>
+  <h1> IMU Data and Activity Recognition </h1>
   <div id='results'> </div>
 </body>
 </html>
