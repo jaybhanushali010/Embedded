@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html>
 <head>
 <script src='asyncReq.js'></script>
@@ -18,5 +18,29 @@ function start()
 <body onload='start()'>
 <h1> IMU Data </h1>
 <div id='results'> </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script src='asyncReq.js'></script>
+  <script>
+    function updateData() {
+      loadURL("./getData", function(data) {
+        var jsonData = JSON.parse(data);
+        document.getElementById("results").innerHTML =
+          "x: " + jsonData.x + "<br>yy: " + jsonData.yy + "<br>z: " + jsonData.z + "<br>pos: " + jsonData.pos;
+      });
+    }
+
+    function start() {
+      setInterval(updateData, 300);
+    }
+  </script>
+</head>
+<body onload='start()'>
+  <h1> IMU Data </h1>
+  <div id='results'> </div>
 </body>
 </html>
