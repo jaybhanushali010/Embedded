@@ -7,7 +7,7 @@ var MS = require("mongoskin");
 var hostname = process.env.HOSTNAME || 'localhost';
 var port = 8080;
 
-var accX, accY, accZ, post;
+var accX, accY, accZ, pos;
 
 var db = MS.db("mongodb://127.0.0.1:27017/sensorData");
 
@@ -20,7 +20,7 @@ app.get("/sendData", function (req, res) {
     accX = req.query.x
     accY = req.query.y
     accZ = req.query.z
-    post = req.query.pos //|| "p"
+    pos = req.query.post //|| "p"
     req.query.time = new Date().getTime();
 
     // console.log("Received data:", req.query);
@@ -39,7 +39,7 @@ app.get("/getData", function (req, res) {
       x: accX,
       y: accY,
       z: accZ,
-      pos: post // Include the posture information
+      post: pos // Include the posture information
     };
   
     res.json(ret); // Send the response as JSON
