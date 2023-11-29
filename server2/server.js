@@ -20,7 +20,7 @@ app.get("/sendData", function (req, res) {
     accX = req.query.x
     accY = req.query.y
     accZ = req.query.z
-    pos = req.query.post //|| "p"
+    pos = req.query.posture //|| "p"
     req.query.time = new Date().getTime();
 
     // console.log("Received data:", req.query);
@@ -39,7 +39,7 @@ app.get("/getData", function (req, res) {
       x: accX,
       y: accY,
       z: accZ,
-      post: pos // Include the posture information
+      posture: pos // Include the posture information
     };
   
     res.json(ret); // Send the response as JSON
