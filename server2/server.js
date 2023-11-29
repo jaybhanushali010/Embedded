@@ -32,15 +32,15 @@ app.get("/sendData", function (req, res) {
 
 
 app.get("/getData", function (req, res) {
-  var ret = {}
-
-    ret.x = accX; 
-    ret.y = accY; 
-    ret.z = accZ;
-    ret.pos = pos; 
-    
-    res.send(JSON.stringify(ret));
-});
+    var ret = {
+      "x": parseFloat(accX),
+      "yy": parseFloat(accY),
+      "z": parseFloat(accZ),
+      "pos": pos
+    };
+  
+    res.json(ret);
+  });
 
 app.use(methodOverride());
 app.use(bodyParser());
