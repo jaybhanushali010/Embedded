@@ -33,14 +33,15 @@ app.get("/sendData", function (req, res) {
 
 app.get("/getData", function (req, res) {
     var ret = {
-      "x": parseFloat(accX),
-      "yy": parseFloat(accY),
-      "z": parseFloat(accZ),
-      "pos": pos
+      x: accX,
+      y: accY,
+      z: accZ,
+      pos: pos // Include the posture information
     };
   
-    res.json(ret);
+    res.json(ret); // Send the response as JSON
   });
+  
 
 app.use(methodOverride());
 app.use(bodyParser());
