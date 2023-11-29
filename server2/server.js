@@ -7,7 +7,7 @@ var MS = require("mongoskin");
 var hostname = process.env.HOSTNAME || 'localhost';
 var port = 8080;
 
-var accX, accY, accZ, pos;
+var accX, accY, accZ, post;
 
 var db = MS.db("mongodb://127.0.0.1:27017/sensorData");
 
