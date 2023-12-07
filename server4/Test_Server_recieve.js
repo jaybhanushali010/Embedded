@@ -1,10 +1,18 @@
 // server.js
 
-const express = require('express');
-const bodyParser = require('body-parser');
+var express = require("express");
+var app = express();
+var bodyParser = require('body-parser');
+var errorHandler = require('errorhandler');
+var methodOverride = require('method-override');
+var hostname = process.env.HOSTNAME || 'localhost';
+var port = 8080;
+
+// const express = require('express');
+// const bodyParser = require('body-parser');
 
 const app = express();
-const port = 3000; // Change this to your desired port
+// const port = 3000; // Change this to your desired port
 
 // Parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
