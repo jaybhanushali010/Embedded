@@ -6,7 +6,7 @@ var methodOverride = require('method-override');
 var hostname = process.env.HOSTNAME || 'localhost';
 var port = 8080;
 
-var t, h;
+var parkval
 
 
 app.get("/", function (req, res) {
@@ -14,20 +14,17 @@ app.get("/", function (req, res) {
 });
 
 app.get("/sendData", function (req, res) {
-  t = req.query.t;
-  h = req.query.h;
-    req.query.time = new Date().getTime();
-
-    res.send("ok");
+  parkval = req.query.park_val;
+  // h = req.query.h;
+  req.query.time = new Date().getTime();
+  res.send("ok");
 });
 
 
 app.get("/getData", function (req, res) {
   var ret = {}
-
-    ret.t = t; 
-    ret.h = h; 
-    
+    ret.park_val = parkval; 
+    // ret.h = h; 
     res.send(JSON.stringify(ret));
 });
 
