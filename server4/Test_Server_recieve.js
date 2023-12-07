@@ -96,7 +96,7 @@ app.get("/", function (req, res) {
 app.post("/update_space_counter", function (req, res) {
     parkval = req.body.space_counter;
     // Handle the received spaceCounter data as needed
-    console.log(`Received space counter: ${parkval}`);
+    console.log(`Available parking space: ${parkval}`);
     
     // Send a response back to the Python script
     res.send("Space counter received successfully.");
